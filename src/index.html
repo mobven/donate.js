@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate JS</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Jost", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="./donate.js"></script>
+    <script>
+      const donate = new Donate({
+        position: "center",
+        links: [
+          {
+            text: "Örnek Bağış Linki",
+            url: "https://www.google.com",
+          },
+        ],
+        message:
+          "Uygulamamız, 6 Şubat 2023 tarihinde yaşanan ve 11 ilde etkisini hissettiren depremden  etkilenenlerin hayatlarında bir fark yaratmanızı diliyor. Sadece birkaç dokunuşla afet yardımı çabalarına bağışta bulunabilir ve ihtiyacı olanlara yardım sağlayabilirsiniz. Depremlerden etkilenen insanlara destek sağlama misyonumuzda bize katılın.",
+      });
+      donate.init();
+    </script>
+  </body>
+</html>
