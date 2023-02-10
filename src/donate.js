@@ -1,11 +1,19 @@
 class Donate {
   options = {
+    theme: "",
     message: "",
+    title: "",
+    highLight: "",
     position: "",
     links: [],
   };
   constructor(options) {
     this.options = { ...this.options, ...options };
+    if (this.options.theme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
   }
 
   init() {
@@ -19,7 +27,6 @@ class Donate {
     <img src="./assets/img/heart5.png" alt="heart" class="popup__heart" />
       <div class="popup__content ${this.options.position}">
       <a id="popup__close" href="#" class="popup__close">
-        <span>Kapat</span>
         <img src="./assets/img/close-circle.png" alt="heart" class="popup__heart" />
       </a>
         <img src="./assets/img/right.png" alt="right" class="popup_right_corner" />
@@ -27,7 +34,7 @@ class Donate {
         <div class="popup__header">
           <img src="./assets/img/logo.png" alt="logo" class="popup__logo" />
           <div class="header__title">
-            <h1>Her Bağışla <span>Fark Yaratın</span></h1>
+            <h1>${this.options.title} <span>${this.options.highLight}</span></h1>
           </div>
         </div>
         <div class="popup__body">
@@ -35,11 +42,10 @@ class Donate {
            ${this.options.message}
           </p>
         </div>
-        <div class="popup__footer">
+        <div id="custom_links" class="popup__footer">
           <a target='_blank' href='https://ahbap.org/bagisci-ol' class="button green">AHBAP</a>
           <a target='_blank' href='https://www.afad.gov.tr/tr/yardim' class="button blue">AFAD</a>
           <a target='_blank' href='https://www.kizilay.org.tr/Bagis/BagisYap/404/pazarcik-depremi-bagisi' class="button red">Türk Kızılay</a>
-          <div id="custom_links"></div>
         </div>
       </div>
     </div>`;
