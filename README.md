@@ -23,7 +23,7 @@ DONATE.JS can be initialized through, which has default title and message those 
 
 ```js
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <script src="./donate.js><script>
+  <script src="./donate.js></script>
     <script>
     const donate = new Donate({
       position:"center",
@@ -36,4 +36,5 @@ DONATE.JS can be initialized through, which has default title and message those 
       message:"Sample Message",
     })
     donate.init();
+    </script>
 ```
