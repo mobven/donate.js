@@ -12,16 +12,16 @@ Donate.js WEB SDK to show donation alerts easily in your website.
 ## Installation
 
 ```
-https://github.com/mobven/iDonateAlert.git
+https://github.com/mobven/donate.js.git
 ```
 
 ## Usage
 
 ### Default initializer
 
-iDonateAlert can be initialized through, which has default title and message those are presented in the screenshot above.
+DONATE.JS can be initialized through, which has default title and message those are presented in the screenshot above.
 
-```bash
+```js
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="./donate.js><script>
     <script>
