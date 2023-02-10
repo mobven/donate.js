@@ -1,12 +1,20 @@
-# Afet Web SDK
+# Donate.JS
 
 ## Yükleme
 
-    <script src="./afet-sdk-web.js><script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+
+    <script src="./donate.js><script>
     <script>
-    const afetYardim = new AfetYardim({
-      position:"Top",
+    const donate = new Donate({
+      position:"center",
+      links: [
+          {
+            text: "Örnek Bağış Linki",
+            url: "https://www.google.com",
+          },
+        ],
       message:"Sample Message",
-      buttonText:"HelpButton"
-    })    
-	  afetYardim.init();
+    })
+      afetYardim.init();
