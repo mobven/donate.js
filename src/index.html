@@ -16,61 +16,84 @@
       body {
         font-family: "Jost", sans-serif;
       }
+      .select {
+        display: flex;
+        width: 500px;
+        flex-direction: row;
+        margin-bottom: 10px;
+      }
+      .select label {
+        width: 200px;
+      }
+      .select input[type="text"],
+      .select select,
+      .select textarea {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
-    <h1>Mozilla is cool</h1>
-    <img
-      src="images/firefox-icon.png"
-      alt="The Firefox logo: a flaming fox surrounding the Earth."
-    />
+    <header>
+      <h1>Afet Bilgilendirme Demo</h1>
+    </header>
+    <div class="test">
+      <div class="select">
+        <label for="dark">Dark Mode</label>
+        <input id="dark" type="checkbox" />
+      </div>
+      <div class="select">
+        <label for="position">Position</label>
+        <select>
+          <option value="">Select</option>
+          <option value="center">Center</option>
+          <option value="top">Top</option>
+        </select>
+      </div>
+      <div class="select">
+        <label for="title">Title Text</label>
+        <input value="Her Bağışla" id="title" type="text" />
+      </div>
+      <div class="select">
+        <label for="highlight">Highlight Text</label>
+        <input value="Fark Yaratın" id="highlight" type="text" />
+      </div>
+      <div class="select">
+        <label for="message">Message</label>
+        <textarea rows="10" id="message" type="text">
+        Uygulamamız, 6 Şubat 2023 tarihinde yaşanan ve 11 ilde etkisini hissettiren depremden  etkilenenlerin hayatlarında bir fark yaratmanızı diliyor. Sadece birkaç dokunuşla afet yardımı çabalarına bağışta bulunabilir ve ihtiyacı olanlara yardım sağlayabilirsiniz. Depremlerden etkilenen insanlara destek sağlama misyonumuzda bize katılın.
+      </textarea
+        >
+      </div>
 
-    <p>At Mozilla, we’re a global community of</p>
-
-    <ul>
-      <!-- changed to list in the tutorial -->
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
-
-    <p>
-      working together to keep the Internet alive and accessible, so people
-      worldwide can be informed contributors and creators of the Web. We believe
-      this act of human collaboration across an open platform is essential to
-      individual growth and our collective future.
-    </p>
-
-    <p>
-      Read the
-      <a href="https://www.mozilla.org/en-US/about/manifesto/"
-        >Mozilla Manifesto</a
-      >
-      to learn even more about the values and principles that guide the pursuit
-      of our mission.
-    </p>
+      <button id="show">Show Modal</button>
+    </div>
 
     <script src="./donate.js"></script>
     <script>
-      const donate = new Donate({
-        theme: "light",
-        position: "center",
-        title: "Her Bağış",
-        highLight: "Bir Hayat Değiştiriyor",
-        links: [
-          {
-            text: "Trendyol Bağış Linki",
-            url: "https://www.trendyol.com",
-          },
-          {
-            text: "Yemek Sepeti Linki",
-            url: "https://www.yemeksepeti.com",
-          },
-        ],
-        message:
-          "Uygulamamız, 6 Şubat 2023 tarihinde yaşanan ve 11 ilde etkisini hissettiren depremden  etkilenenlerin hayatlarında bir fark yaratmanızı diliyor. Sadece birkaç dokunuşla afet yardımı çabalarına bağışta bulunabilir ve ihtiyacı olanlara yardım sağlayabilirsiniz. Depremlerden etkilenen insanlara destek sağlama misyonumuzda bize katılın.",
+      const show = document.getElementById("show");
+      const dark = document.getElementById("dark");
+      const position = document.querySelector("select");
+      const title = document.getElementById("title");
+      const highlight = document.getElementById("highlight");
+      const message = document.getElementById("message");
+
+      show.addEventListener("click", () => {
+        const donate = new Donate({
+          theme: dark.checked ? "dark" : "light",
+          position: position.value,
+          title: title.value,
+          highLight: highlight.value,
+          links: [
+            {
+              text: "Trendyol Bağış Linki",
+              url: "https://www.trendyol.com",
+            },
+          ],
+          message: message.value,
+        });
+
+        donate.init();
       });
-      donate.init();
     </script>
   </body>
 </html>
