@@ -5,8 +5,8 @@ Donate.js WEB SDK to show donation alerts easily in your website.
 ## Examples
 
 <p align="center">
-  <img alt="UI" src="Docs/dark.png">
-  <img alt="UI" src="Docs/light.png">
+  <img alt="UI" src="docs/dark.png">
+  <img alt="UI" src="docs/light.png">
 </p>
 
 ## Installation
