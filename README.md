@@ -17,4 +17,4 @@
         ],
       message:"Sample Message",
     })
-      afetYardim.init();
+    donate.init();
