@@ -42,7 +42,7 @@
       </div>
       <div class="select">
         <label for="position">Position</label>
-        <select>
+        <select id="position">
           <option value="">Select</option>
           <option value="center">Center</option>
           <option value="top">Top</option>
@@ -64,16 +64,26 @@
         >
       </div>
 
+      <div class="select">
+        <label for="heart">Button Heart</label>
+        <select id="heart">
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
       <button id="show">Show Modal</button>
     </div>
 
     <script>
       const show = document.getElementById("show");
       const dark = document.getElementById("dark");
-      const position = document.querySelector("select");
+      const position = document.getElementById("position");
       const title = document.getElementById("title");
       const highlight = document.getElementById("highlight");
       const message = document.getElementById("message");
+      const heart = document.getElementById("heart");
 
       show.addEventListener("click", () => {
         const donate = new Donate({
@@ -85,6 +95,7 @@
             {
               text: "Trendyol Bağış Linki",
               url: "https://www.trendyol.com",
+              heart: heart.value,
             },
           ],
           message: message.value,
