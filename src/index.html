@@ -63,7 +63,10 @@
       </textarea
         >
       </div>
-
+      <div class="select">
+        <label for="close">Close Text</label>
+        <input value="Kapat" id="close" type="text" />
+      </div>
       <button id="show">Show Modal</button>
     </div>
 
@@ -74,6 +77,7 @@
       const title = document.getElementById("title");
       const highlight = document.getElementById("highlight");
       const message = document.getElementById("message");
+      const close = document.getElementById("close");
 
       show.addEventListener("click", () => {
         const donate = new Donate({
@@ -81,6 +85,7 @@
           position: position.value,
           title: title.value,
           highLight: highlight.value,
+          close: close.value,
           links: [
             {
               text: "Trendyol Bağış Linki",

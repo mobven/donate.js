@@ -3,6 +3,7 @@ type Options = {
   message: string;
   title: string;
   highLight: string;
+  close: string;
   position: string;
   links: Array<{ url: string; text: string; style: string }>;
 };
@@ -22,7 +23,7 @@ class Donate {
     <div class="popup">
       <div class="popup__content ${this.options.position}">
         <a id="popup__close" href="#" class="popup__close">
-          <span class='close'>Kapat</span>
+          <span class='close'>${this.options.close?.length ? this.options.close : "Kapat"}</span>
         </a>
         ${
           this.options.theme !== "dark"
