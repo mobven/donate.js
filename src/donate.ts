@@ -21,15 +21,21 @@ class Donate {
     modal.innerHTML = `
     <div class="popup">
       <div class="popup__content ${this.options.position}">
-      <a id="popup__close" href="#" class="popup__close">
-        <img src="./assets/img/close-circle.png" alt="heart" class="popup__heart" />
-      </a>
-        <img src="./assets/img/right.png" alt="right" class="popup_right_corner" />
-        <img src="./assets/img/left.png" alt="right" class="popup_left_corner" />
+        <a id="popup__close" href="#" class="popup__close">
+          <span class='close'>Kapat</span>
+        </a>
+        ${
+          this.options.theme !== "dark"
+            ? `<img src="./assets/img/right.png" alt="right" class="popup_right_corner" />
+              <img src="./assets/img/left.png" alt="right" class="popup_left_corner" />`
+            : ""
+        }
         <div class="popup__header">
           <img src="./assets/img/logo.png" alt="logo" class="popup__logo" />
           <div class="header__title">
-            <h1>${this.options.title} <span>${this.options.highLight}</span></h1>
+            <h1>${this.options.title} <span>${
+      this.options.highLight
+    }</span></h1>
           </div>
         </div>
         <div class="popup__body">
