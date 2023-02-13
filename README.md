@@ -21,7 +21,8 @@ npm install
 npm run dev
 ```
 
-## Production mode(You can include the javascript and css file created in the dist folder in your project.)
+## Production mode
+You can include the javascript and css file created in the dist folder in your project.
 
 ```
 npm run build
