@@ -34,8 +34,8 @@ npm run build
 DONATE.JS can be initialized through, which has default title and message those are presented in the screenshot above.
 
 ```js
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <script src="./donate.js></script>
+  <link rel="stylesheet" href=".donate.min.css" />
+  <script src="./donate.min.js></script>
     <script>
     const donate = new Donate({
       position:"center",

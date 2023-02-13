@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Donate JS Demo</title><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600;700;800&display=swap" rel="stylesheet"/><style>body {
+        font-family: "Jost", sans-serif;
+      }
+      .select {
+        display: flex;
+        width: 500px;
+        flex-direction: row;
+        margin-bottom: 10px;
+      }
+      .select label {
+        width: 200px;
+      }
+      .select input[type="text"],
+      .select select,
+      .select textarea {
+        width: 100%;
+      }</style><script defer="defer" src="donate.min.js"></script><link href="donate.min.css" rel="stylesheet"></head><body><header><h1>Donate.JS Demo</h1></header><div class="test"><div class="select"><label for="dark">Dark Mode</label> <input id="dark" type="checkbox"/></div><div class="select"><label for="position">Position</label> <select><option value="">Select</option><option value="center">Center</option><option value="top">Top</option></select></div><div class="select"><label for="title">Title Text</label> <input value="Her Bağışla" id="title"/></div><div class="select"><label for="highlight">Highlight Text</label> <input value="Fark Yaratın" id="highlight"/></div><div class="select"><label for="message">Message</label> <textarea rows="10" id="message" type="text">
+        Uygulamamız, 6 Şubat 2023 tarihinde yaşanan ve 11 ilde etkisini hissettiren depremden  etkilenenlerin hayatlarında bir fark yaratmanızı diliyor. Sadece birkaç dokunuşla afet yardımı çabalarına bağışta bulunabilir ve ihtiyacı olanlara yardım sağlayabilirsiniz. Depremlerden etkilenen insanlara destek sağlama misyonumuzda bize katılın.
+      </textarea></div><button id="show">Show Modal</button></div><script>const show = document.getElementById("show");
+      const dark = document.getElementById("dark");
+      const position = document.querySelector("select");
+      const title = document.getElementById("title");
+      const highlight = document.getElementById("highlight");
+      const message = document.getElementById("message");
+
+      show.addEventListener("click", () => {
+        const donate = new Donate({
+          theme: dark.checked ? "dark" : "light",
+          position: position.value,
+          title: title.value,
+          highLight: highlight.value,
+          links: [
+            {
+              text: "Trendyol Bağış Linki",
+              url: "https://www.trendyol.com",
+            },
+          ],
+          message: message.value,
+        });
+
+        donate.init();
+      });</script></body></html>
