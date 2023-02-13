@@ -23,7 +23,7 @@ class Donate {
     <div class="popup">
       <div class="popup__content ${this.options.position}">
         <a id="popup__close" href="#" class="popup__close">
-          <span class='close'>${this.options.close?.length ? this.options.close : "Kapat"}</span>
+          <span class='close'>${this.options.close?.length ? this.options.close : '<img src="./assets/img/close-circle.png" alt="close" />'}</span>
         </a>
         ${
           this.options.theme !== "dark"
