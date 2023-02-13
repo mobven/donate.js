@@ -114,8 +114,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 .header__title h1 {
   font-size: var(--large-size);
@@ -145,6 +143,18 @@
   background: var(--primary-color);
   transition: all 0.3s ease;
   font-size: var(--small-size);
+  position: relative;
+}
+.heart::after {
+  content: "";
+  background-image: url("../assets/img/heart2.png");
+  background-repeat: repeat-y;
+  bottom: -10px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  width: 21px;
+  z-index: 1;
 }
 .green {
   border: 1px solid #88be40;
@@ -172,8 +182,6 @@
     width: 100%;
     padding: 10px;
     max-height: 250px;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
   .popup__content {
     margin: 10px;

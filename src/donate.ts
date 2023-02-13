@@ -4,7 +4,7 @@ type Options = {
   title: string;
   highLight: string;
   position: string;
-  links: Array<{ url: string; text: string; style: string }>;
+  links: Array<{ url: string; text: string; style: string; heart: string; }>;
 };
 class Donate {
   private options: Options;
@@ -56,7 +56,7 @@ class Donate {
     this.options.links.forEach((link) => {
       const a = document.createElement("a");
       a.setAttribute("href", link.url);
-      a.setAttribute("class", "button");
+      a.setAttribute("class", link.heart == "yes" ? "button heart" : "button");
       a.setAttribute("style", link.style);
       a.target = "_blank";
       a.innerHTML = link.text;
