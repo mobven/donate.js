@@ -12,7 +12,19 @@ Donate.js WEB SDK to show donation alerts easily in your website.
 ## Installation
 
 ```
-https://github.com/mobven/donate.js.git
+npm install
+```
+
+## Development mode
+
+```
+npm run dev
+```
+
+## Production mode(You can include the javascript and css file created in the dist folder in your project.)
+
+```
+npm run build
 ```
 
 ## Usage
