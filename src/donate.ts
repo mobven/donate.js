@@ -22,12 +22,12 @@ class Donate {
     <div class="popup">
       <div class="popup__content ${this.options.position}">
         <a id="popup__close" href="#" class="popup__close">
-          <span class='close'>Kapat</span>
+          <span class='close'>X</span>
         </a>
         ${
           this.options.theme !== "dark"
-            ? `<img src="./assets/img/right.png" alt="right" class="popup_right_corner" />
-              <img src="./assets/img/left.png" alt="right" class="popup_left_corner" />`
+            ? `<img src="./assets/img/right.png" alt="right" class="popup_corner_img popup_right_corner" />
+              <img src="./assets/img/left.png" alt="right" class="popup_corner_img popup_left_corner" />`
             : ""
         }
         <div class="popup__header">

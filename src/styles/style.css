@@ -66,11 +66,16 @@
   cursor: pointer;
   z-index: 5555;
   text-decoration: none;
-  color: #292d32;
+  border: 2px solid #a49c9c;
+  border-radius: 50%;
+  color: #a49c9c;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
 }
-
 .popup__close span {
-  margin-right: 5px;
+  color: #a49c9c;
 }
 
 .popup__header {
@@ -99,13 +104,14 @@
   font-size: var(--small-size);
   color: var(--text-color);
 }
-.popup_right_corner {
+.popup_corner_img {
   position: absolute;
+}
+.popup_right_corner {  
   right: -3px;
   top: -3px;
 }
 .popup_left_corner {
-  position: absolute;
   left: -3px;
   bottom: -3px;
 }
@@ -136,7 +142,9 @@
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  text-align: "center";
+  text-align: center;
+  line-height: 1rem;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
